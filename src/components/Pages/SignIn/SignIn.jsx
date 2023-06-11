@@ -17,7 +17,8 @@ const SignIn = () => {
         })
     }
     return (
-        <div>
+        <div className="">
+            <h1 className="text-center text-5xl font-semibold">Please Sign In</h1>
             <form className="grid grid-cols-1 gap-4 w-1/2 mx-auto" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label className="label">

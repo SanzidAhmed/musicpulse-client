@@ -1,15 +1,35 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const SignUp = () => {
-    const {createUser}  = useContext(AuthContext)
-    const { register, handleSubmit } = useForm();
+    const {createUser, updateUserProfile}  = useContext(AuthContext)
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         createUser( data.email, data.password)
         .then(() => {
+            updateUserProfile(data.name, data.photo)
+            .then(() => {
+                const savedUser = {name: data.name, email: data.email}
+                fetch('http://localhost:3500/users',{
+                    method: 'POST',
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(savedUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.insertedId){
+
+                        reset();
+                        Navigate('/')
+                    }
+                })
+
+            })
             
         })
         .catch(err => {

@@ -5,21 +5,25 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
+    console.log(user);
     const handleSignOut = () => {
         signOutUser()
-        .then(() => {})
-        .catch((err) => {
-            console.log(err.message);
-        });
+            .then(() => { })
+            .catch((err) => {
+                console.log(err.message);
+            });
     }
     const navbarOptions = <>
         <li><Link>Home</Link></li>
         <li><Link>Instructors</Link></li>
-        <li><Link>Classes</Link></li>
+        <li><Link to="/allclasses">All Classes</Link></li>
+        <li><Link  to="/dashboard/mycart" className=" ">
+            <div className="badge badge-secondary">+</div></Link></li>
         <li><Link>Dashboard</Link></li>
+        
     </>
     return (
-        <div className="bg-[#B799FF] text-white ">
+        <div className="bg-[#c9b649] text-white fixed z-30 h-28 w-full">
             <div className="navbar container mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -34,19 +38,19 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end">
-                    <div className="navbar-end hidden lg:flex">
+                    <div className=" hidden lg:flex">
                         <ul className="menu menu-horizontal ">
                             {navbarOptions}
                         </ul>
                     </div>
                     {!user && <Link to="/signin" className="btn bg-[#F45050] border-[#F45050]">Sign In</Link>}
-                    {user && <div className="dropdown dropdown-end">
+                    {user && <div className="dropdown dropdown-end relative">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src="https://i.ibb.co/3WZTF2q/Red-Elegant-Abstract-Podcast-Free-Logo-removebg-preview.png" />
+                                <img src={user.photoURL} />
                             </div>
                         </label>
-                        <ul tabIndex={0} className="menu text-black menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-[#F45050]">
+                        <ul tabIndex={0} className="menu text-black menu-sm absolute dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-[#F45050]">
                             <li>
                                 <a className="justify-between">
                                     Profile

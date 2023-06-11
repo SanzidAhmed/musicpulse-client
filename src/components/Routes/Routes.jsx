@@ -2,9 +2,10 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
 import Home from "../Pages/Home/Home/Home";
-import Main from "../Pages/Home/Main";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
+import Main from "../Layout/Main";
+import AllClass from "../Pages/AllClass/AllClass";
 
 
 
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
         {
           path: 'signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path: 'allclasses',
+          element: <AllClass></AllClass>
         }
       ]
     }
