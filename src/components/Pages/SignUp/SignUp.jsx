@@ -8,6 +8,7 @@ const SignUp = () => {
     const {createUser, updateUserProfile}  = useContext(AuthContext)
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
+        console.log(data.photo);
         createUser( data.email, data.password)
         .then(() => {
             updateUserProfile(data.name, data.photo)
