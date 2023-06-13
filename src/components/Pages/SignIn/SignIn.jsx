@@ -2,24 +2,25 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const SignIn = () => {
 
 
-    const {signInUser} = useContext(AuthContext);
-    const location  = useLocation();
+    const { signInUser } = useContext(AuthContext);
+    const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/"
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         signInUser(data.email, data.password)
-        .then(() => {
-            navigate(from, {replace: true})
-        })
-        .catch(err => {
-            console.log(err.message);
-        })
+            .then(() => {
+                navigate(from, { replace: true })
+            })
+            .catch(err => {
+                console.log(err.message);
+            })
     }
     return (
         <div className="">
@@ -39,6 +40,9 @@ const SignIn = () => {
                 </div>
                 <input className="btn bg-[#F45050]" value="sign in" type="submit" />
             </form>
+            <div className="w-1/2 mx-auto">
+                <SocialLogin></SocialLogin>
+            </div>
             <p className="text-center mt-4">New to MusicPulse? please  <Link to="/signup" className="text-orange-500 font-bold">Sign Up</Link></p>
         </div>
 

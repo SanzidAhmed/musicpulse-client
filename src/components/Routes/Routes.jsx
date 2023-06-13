@@ -8,6 +8,8 @@ import Main from "../Layout/Main";
 import AllClass from "../Pages/AllClass/AllClass";
 import Dashboard from "../Layout/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
+import EnrollClass from "../Pages/Dashboard/EnrollClass/EnrollClass";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -37,11 +39,15 @@ export const router = createBrowserRouter([
     },
     {
       path: 'dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children: [
         {
           path: 'mycart',
           element: <MyCart></MyCart>
+        },
+        {
+          path: 'enrollclass',
+          element: <EnrollClass></EnrollClass>
         }
       ]
     }

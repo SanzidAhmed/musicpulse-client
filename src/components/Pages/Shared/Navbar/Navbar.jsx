@@ -8,7 +8,6 @@ import useCart from "../../../../hooks/useCart";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
-    console.log(user);
     const [cart] = useCart();
     const handleSignOut = () => {
         signOutUser()
@@ -46,7 +45,7 @@ const Navbar = () => {
                         <ul className="menu menu-horizontal ">
                             {navbarOptions}
                             <li><Link className=" "> <FaShoppingCart></FaShoppingCart>
-                                <div className="badge badge-secondary">+{cart?.length || 0}</div></Link>
+                                <div className="badge badge-secondary bg-[#F45050]">+{cart?.length || 0}</div></Link>
                             </li>
                             <li><Link to="/dashboard/mycart">Dashboard</Link></li>
                         </ul>
