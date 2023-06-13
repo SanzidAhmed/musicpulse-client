@@ -12,8 +12,9 @@ const SingleClass = ({classes}) => {
     const location = useLocation();
     const [, refetch] = useCart();
     const handleAddToCart =() => {
-        const cartClass = {classId: _id, name: name, instructor: instructor, price: price, email:user.email}
-        if(user && user.email){
+        
+        if(user && user?.email){
+            const cartClass = {classId: _id, name: name, instructor: instructor, price: price, email:user?.email}
             fetch('http://localhost:3500/carts',{
                 method: 'POST',
                 headers:{

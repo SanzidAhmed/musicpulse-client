@@ -44,7 +44,7 @@ const Navbar = () => {
                     <div className=" hidden lg:flex">
                         <ul className="menu menu-horizontal ">
                             {navbarOptions}
-                            <li><Link className=" "> <FaShoppingCart></FaShoppingCart>
+                            <li><Link  to="/dashboard/mycart" className=" "> <FaShoppingCart></FaShoppingCart>
                                 <div className="badge badge-secondary bg-[#F45050]">+{cart?.length || 0}</div></Link>
                             </li>
                             <li><Link to="/dashboard/mycart">Dashboard</Link></li>

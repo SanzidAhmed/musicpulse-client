@@ -10,6 +10,7 @@ import Dashboard from "../Layout/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import EnrollClass from "../Pages/Dashboard/EnrollClass/EnrollClass";
 import PrivateRoute from "./PrivateRoute";
+import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 
 
 
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
         {
           path: 'enrollclass',
           element: <EnrollClass></EnrollClass>
+        },
+        {
+          path: 'manageusers',
+          element: <ManageUser></ManageUser>
         }
       ]
     }
