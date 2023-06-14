@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useInstructor from "../../../hooks/useInstructor";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 const SingleClass = ({classes}) => {
@@ -9,9 +11,21 @@ const SingleClass = ({classes}) => {
     const {name, instructor, _id,price} = classes;
     const navigate = useNavigate();
     const location = useLocation();
+    const [isInstructor] = useInstructor();
+    const[isAdmin] = useAdmin();
     const handleAddToCart =() => {
         
-        if(user && user?.email){
+        if( user && user?.email ){
+            if( isInstructor || isAdmin){
+                Swal.fire({
+                    position: 'top',
+                    icon: 'error',
+                    title: `${isInstructor?'Instructor':'Admin'} can not buy any courses`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                return false;
+            }
             const cartClass = {classId: _id, name: name, instructor: instructor, price: price, email:user?.email}
             fetch('http://localhost:3500/carts',{
                 method: 'POST',
@@ -55,7 +69,7 @@ const SingleClass = ({classes}) => {
                 <h2 className="card-title">{name}</h2>
                 <p><span className="font-semibold">Instructor Name:</span> {instructor}</p>
                 <div className="card-actions justify-end">
-                    <div onClick={() => handleAddToCart(classes)} className="btn btn-outline btn-xs">Add to cart</div>
+                    <div onClick={() => handleAddToCart(classes)}  className="btn btn-outline btn-xs">Add to cart</div>
                     <div className="btn btn-outline btn-xs">Buy now</div>
                 </div>
             </div>

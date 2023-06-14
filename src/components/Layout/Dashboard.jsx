@@ -1,10 +1,12 @@
 import { FaShoppingCart, FaBriefcase, FaUsers, FaHome } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     return (
         <div className="drawer lg:drawer-open bg-slate-100">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -22,15 +24,20 @@ const Dashboard = () => {
                             </NavLink>
                             </li>
                             <li><NavLink to="/dashboard/manageusers"><FaUsers></FaUsers>Manage Users</NavLink></li>
-                        </> :
+                        </> : isInstructor ? <>
+                            <li><NavLink to="/dashboard/addclass" className=" "><FaShoppingCart></FaShoppingCart> Add class
+                            </NavLink>
+                            </li>
+                            <li><NavLink to="/dashboard/manageusers"><FaUsers></FaUsers>My Classes</NavLink></li></>:
                             <>
                                 <li><NavLink to="/dashboard/mycart" className=" "><FaShoppingCart></FaShoppingCart>My Selected Cart
                                 </NavLink>
                                 </li>
                                 <li><NavLink to="/dashboard/enrollclass"><FaBriefcase></FaBriefcase> My Enrolled Classes</NavLink></li>
                             </>
-                    }
-                      <div className="divider"></div>
+                    },
+                    
+                    <div className="divider"></div>
 
                     <li><Link to="/"><FaHome></FaHome>Home</Link></li>
                 </ul>
