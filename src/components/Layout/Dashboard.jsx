@@ -1,11 +1,10 @@
-import { FaShoppingCart, FaBriefcase, FaUsers } from "react-icons/fa";
-import { NavLink, Outlet } from "react-router-dom";
-import useCart from "../../hooks/useCart";
+import { FaShoppingCart, FaBriefcase, FaUsers, FaHome } from "react-icons/fa";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Dashboard = () => {
-    const [cart] = useCart();
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
     return (
         <div className="drawer lg:drawer-open bg-slate-100">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -19,21 +18,21 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-80 h-full bg-[#c9b649] text-base-content">
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/mycart" className=" "><FaShoppingCart></FaShoppingCart>Manage Classes 
+                            <li><NavLink to="/dashboard/mycart" className=" "><FaShoppingCart></FaShoppingCart>Manage Classes
                             </NavLink>
                             </li>
-                            <li><NavLink to="/dashboard/manageusers"><FaUsers></FaUsers> Manage Users</NavLink></li>
+                            <li><NavLink to="/dashboard/manageusers"><FaUsers></FaUsers>Manage Users</NavLink></li>
                         </> :
                             <>
                                 <li><NavLink to="/dashboard/mycart" className=" "><FaShoppingCart></FaShoppingCart>My Selected Cart
-                                    <div className="badge badge-secondary bg-white text-black">
-                                        +{cart?.length || 0}
-                                    </div>
                                 </NavLink>
                                 </li>
                                 <li><NavLink to="/dashboard/enrollclass"><FaBriefcase></FaBriefcase> My Enrolled Classes</NavLink></li>
                             </>
                     }
+                      <div className="divider"></div>
+
+                    <li><Link to="/"><FaHome></FaHome>Home</Link></li>
                 </ul>
 
             </div>

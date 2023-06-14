@@ -1,14 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import { FaShoppingCart } from 'react-icons/fa';
-import useCart from "../../../../hooks/useCart";
 
 
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
-    const [cart] = useCart();
     const handleSignOut = () => {
         signOutUser()
             .then(() => { })
@@ -18,7 +15,7 @@ const Navbar = () => {
     }
     const navbarOptions = <>
         <li><Link>Home</Link></li>
-        <li><Link>Instructors</Link></li>
+        <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/allclasses">All Classes</Link></li>
     </>
     return (
@@ -31,10 +28,7 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content  mt-3 p-2 text-black shadow bg-[#F45050] rounded-box w-52 ">
                             {navbarOptions}
-                            <li><Link className=" ">Cart
-                                <div className="badge badge-secondary"> <FaShoppingCart></FaShoppingCart>+{cart?.length || 0}</div></Link>
-                            </li>
-                            <li><Link to="/dashboard/mycart">Dashboard</Link></li>
+                            {user &&<li><Link to="/dashboard">Dashboard</Link></li>}
                         </ul>
                     </div>
                     <Link><img className="h-20 w-28 btn btn-ghost hover:bg-[#c9b649]" src="https://i.ibb.co/BnRMS9g/Red-Elegant-Abstract-Podcast-Free-Logo-1-removebg-preview.png" alt="" /></Link>
@@ -44,10 +38,7 @@ const Navbar = () => {
                     <div className=" hidden lg:flex">
                         <ul className="menu menu-horizontal ">
                             {navbarOptions}
-                            <li><Link  to="/dashboard/mycart" className=" "> <FaShoppingCart></FaShoppingCart>
-                                <div className="badge badge-secondary bg-[#F45050]">+{cart?.length || 0}</div></Link>
-                            </li>
-                            <li><Link to="/dashboard/mycart">Dashboard</Link></li>
+                            {user && <li><Link to="/dashboard">Dashboard</Link></li>}
                         </ul>
                     </div>
                     {!user && <Link to="/signin" className="btn bg-[#F45050] border-[#F45050]">Sign In</Link>}
