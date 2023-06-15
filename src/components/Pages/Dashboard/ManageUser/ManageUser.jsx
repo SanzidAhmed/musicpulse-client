@@ -77,9 +77,6 @@ const ManageUser = () => {
                                         <li>{user.role === 'admin'? 'admin':<button onClick={() => handleMakeAdmin(user)}>admin</button>}</li>
                                         <li>{user.role === 'instructor'? 'instructor':<button onClick={() => handleMakeInstructor(user)}>instructor</button>}</li>
                                     </ul>
-                                    {/* <button className="btn btn-square bg-green-600 text-slate-200">
-                                        {(user.role === 'admin' ? 'admin' : user.role === 'instructor' ? 'instructor' : <FaUsers></FaUsers>)}
-                                    </button> */}
                                 </th>
                                 <th>
                                     <button className="btn btn-square bg-red-700 text-white">

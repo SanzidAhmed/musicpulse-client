@@ -20,7 +20,7 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-80 h-full bg-[#c9b649] text-base-content">
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/mycart" className=" "><FaShoppingCart></FaShoppingCart>Manage Classes
+                            <li><NavLink to="/dashboard/manageclass" className=" "><FaShoppingCart></FaShoppingCart>Manage Classes
                             </NavLink>
                             </li>
                             <li><NavLink to="/dashboard/manageusers"><FaUsers></FaUsers>Manage Users</NavLink></li>
@@ -28,7 +28,7 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/addclass" className=" "><FaShoppingCart></FaShoppingCart> Add class
                             </NavLink>
                             </li>
-                            <li><NavLink to="/dashboard/manageusers"><FaUsers></FaUsers>My Classes</NavLink></li></>:
+                            <li><NavLink to="/dashboard/myclass"><FaUsers></FaUsers>My Classes</NavLink></li></>:
                             <>
                                 <li><NavLink to="/dashboard/mycart" className=" "><FaShoppingCart></FaShoppingCart>My Selected Cart
                                 </NavLink>

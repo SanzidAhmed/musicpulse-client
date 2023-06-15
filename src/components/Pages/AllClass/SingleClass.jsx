@@ -2,30 +2,16 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
-import useInstructor from "../../../hooks/useInstructor";
-import useAdmin from "../../../hooks/useAdmin";
 
 
 const SingleClass = ({classes}) => {
     const {user} = useContext(AuthContext)
-    const {name, instructor, _id,price} = classes;
+    const {name, instructor, _id,price,seats} = classes;
     const navigate = useNavigate();
     const location = useLocation();
-    const [isInstructor] = useInstructor();
-    const[isAdmin] = useAdmin();
     const handleAddToCart =() => {
         
-        if( user && user?.email ){
-            if( isInstructor || isAdmin){
-                Swal.fire({
-                    position: 'top',
-                    icon: 'error',
-                    title: `${isInstructor?'Instructor':'Admin'} can not buy any courses`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                return false;
-            }
+        if(user && user?.email){
             const cartClass = {classId: _id, name: name, instructor: instructor, price: price, email:user?.email}
             fetch('http://localhost:3500/carts',{
                 method: 'POST',
@@ -63,14 +49,14 @@ const SingleClass = ({classes}) => {
         }
     }
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className={`${(seats == 0) ?"bg-red-200" : ""} card w-96 bg-base-100 shadow-xl`}>
             <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p><span className="font-semibold">Instructor Name:</span> {instructor}</p>
+                <p><span className="font-semibold">Available Seats:</span> {seats}</p>
                 <div className="card-actions justify-end">
-                    <div onClick={() => handleAddToCart(classes)}  className="btn btn-outline btn-xs">Add to cart</div>
-                    <div className="btn btn-outline btn-xs">Buy now</div>
+                    <div onClick={() => handleAddToCart(classes)} disabled={seats === '0'|| user?.role === 'instructor' || user?.role === 'admin'} className="btn btn-outline btn-xs" >Add to cart</div>
                 </div>
             </div>
         </div>
