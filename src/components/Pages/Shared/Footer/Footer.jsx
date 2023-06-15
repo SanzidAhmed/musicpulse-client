@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <footer className="bg-base-200">
+        <footer className="bg-slate-200">
             <div className="footer p-10  text-base-content md:flex md:justify-between justify-center mx-auto md:container ">
                 <div>
                     <img className="h-20 w-20" src="https://i.ibb.co/BnRMS9g/Red-Elegant-Abstract-Podcast-Free-Logo-1-removebg-preview.png" alt="" />
@@ -29,7 +29,7 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </div>
             </div>
-            <div className="footer footer-center p-4 bg-base-200 text-base-content">
+            <div className="footer footer-center p-4 bg-slate-200 text-base-content">
                 <div>
                     <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
                 </div>

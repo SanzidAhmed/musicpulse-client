@@ -19,7 +19,7 @@ const Navbar = () => {
         <li><Link to="/allclasses">All Classes</Link></li>
     </>
     return (
-        <div className="bg-[#c9b649] text-white fixed z-30 w-full h-28 max-w-screen-xl">
+        <div className="bg-slate-300 text-white fixed z-30 w-full h-28 max-w-screen-xl">
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
