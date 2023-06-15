@@ -44,7 +44,6 @@ const AuthProvider = ({children}) => {
                     localStorage.setItem('access_token', data.data.token);
                     axios.get(`http://localhost:3500/users/${currentUser.email}`)
                     .then(data => {
-                        console.log(data.data);
                         setUser({...currentUser, ...data.data});
                     })
                 })
