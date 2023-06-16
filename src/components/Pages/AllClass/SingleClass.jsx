@@ -50,7 +50,7 @@ const SingleClass = ({ classes }) => {
     }
     return (
         <div className={`${(seats == 0) ? "bg-red-200" : ""} card w-96 bg-base-100 shadow-xl`}>
-            <figure><img src={photo} alt="Shoes" /></figure>
+            <figure><img src={photo} alt="Shoes" className="h-48 w-full"/></figure>
             <div className="card-body">
                 <h2 className="card-title">{courseName}</h2>
                 <p><span className="font-semibold">Instructor Name:</span> {displayName}</p>

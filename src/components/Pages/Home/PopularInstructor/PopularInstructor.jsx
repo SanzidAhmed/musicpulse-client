@@ -1,7 +1,7 @@
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 
-const Instructor = () => {
+const PopularInstructor = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
         fetch('http://localhost:3500/users')
@@ -10,15 +10,16 @@ const Instructor = () => {
                 setUsers(data);
             })
     }, [])
-    const instructor = users.filter((person) => person.role === 'instructor');
+    const popularInstructor = users.filter((person) => person.role === 'instructor');
     return (
         <div>
-            <h1 className="text-2xl font-bold text-center my-10">Our Popular Instructor</h1>
-            <div className="grid grid-cols-3 gap-10">
+            <h1 className="text-3xl uppercase text-center mt-20 ">MusicPulse popular class</h1>
+            <div className=" mx-auto w-1/2 mb-20 border-solid border mt-2 border-[#F45050]"></div>
+            <div className="md:grid md:grid-cols-3 gap-10 ">
                 {
-                    instructor.map(person => <div key={person._id} className="card w-96 bg-base-100 shadow-xl h-full">
+                    popularInstructor.map(person => <div key={person._id} className="card hover:shadow-lg mt-10 w-96 bg-base-100 h-full">
                     <figure className="px-10 pt-10">
-                      <img src={person.photo}  alt="Shoes" className="rounded-xl h-60 w-full" />
+                      <img src={person.photo} alt="Shoes" className="rounded-xl h-60 w-full" />
                     </figure>
                     <div className="card-body items-center text-center">
                       <h2 className="card-title">{person.name}</h2>
@@ -34,4 +35,4 @@ const Instructor = () => {
     );
 };
 
-export default Instructor;
+export default PopularInstructor;

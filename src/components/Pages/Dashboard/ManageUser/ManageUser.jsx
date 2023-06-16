@@ -47,7 +47,6 @@ const ManageUser = () => {
     }
     return (
         <div>
-            <h1>{users.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     <thead className="bg-[#c9b649]">

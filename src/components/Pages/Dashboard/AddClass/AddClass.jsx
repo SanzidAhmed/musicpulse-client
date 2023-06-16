@@ -55,7 +55,7 @@ const AddClass = () => {
                     <label className="label">
                         <span className="label-text">Course Price</span>
                     </label>
-                    <input type="text" className="input input-bordered w-full " {...register("coursePrice", { required: true })} />
+                    <input type="number" className="input input-bordered w-full " {...register("coursePrice", { required: true })} />
                 </div>
 
                 <div>
