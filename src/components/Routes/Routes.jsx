@@ -16,6 +16,7 @@ import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import MyClass from "../Pages/Dashboard/MyClass/MyClass";
 import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: "/",
