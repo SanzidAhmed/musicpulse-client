@@ -76,8 +76,9 @@ export const router = createBrowserRouter([
           element: <ManageClass></ManageClass>
         },
         {
-          path: 'payment',
-          element: <Payment></Payment>
+          path: 'payment/:id',
+          element: <Payment></Payment>,
+          loader: ({params}) => fetch(`http://localhost:3500/carts/${params.id}`)
         }
       ]
     }

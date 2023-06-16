@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const MyCart = () => {
     const [cart, refetch] = useCart();
     const total = cart.reduce((sum, item) => sum + item.price, 0) ;
-    const grandTotal = parseFloat(total).toFixed(2) ;
+    const grandTotal = parseFloat(total).toFixed(2);
 
     const handleRemove = (item) => {
         Swal.fire({
@@ -80,7 +80,7 @@ const MyCart = () => {
                                     </button>
                                 </th>
                                 <th>
-                                    <Link to="/dashboard/payment" className="btn btn-square bg-green-600 text-white">
+                                    <Link to={`/dashboard/payment/${row._id}`} className="btn btn-square bg-green-600 text-white">
                                         <FaMoneyCheckAlt></FaMoneyCheckAlt>
                                     </Link>
                                 </th>

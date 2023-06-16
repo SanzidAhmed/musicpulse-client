@@ -8,6 +8,9 @@ const AddClass = () => {
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
+        data.coursePrice = parseFloat(data.coursePrice)
+        data.seats = parseInt(data.seats)
+        data.student = parseInt(data.student)
         fetch('http://localhost:3500/classes', {
             method: 'POST',
             headers: {
@@ -74,7 +77,13 @@ const AddClass = () => {
                     <label className="label">
                         <span className="label-text">Available Seat</span>
                     </label>
-                    <input type="text" className="input input-bordered w-full" {...register("seats", { required: true })} />
+                    <input type="number" className="input input-bordered w-full" {...register("seats", { required: true })} />
+                </div>
+                <div>
+                    <label className="label">
+                        <span className="label-text">Number of student</span>
+                    </label>
+                    <input type="number" className="input input-bordered w-full " defaultValue={0} {...register("student", { required: true })} />
                 </div>
                 <input className="btn bg-[#F45050]" type="submit" value="Add Class" />
             </form>
