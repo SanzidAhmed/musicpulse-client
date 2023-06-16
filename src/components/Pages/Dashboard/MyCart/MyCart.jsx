@@ -80,9 +80,9 @@ const MyCart = () => {
                                     </button>
                                 </th>
                                 <th>
-                                    <button className="btn btn-square bg-green-600 text-white">
+                                    <Link to="/dashboard/payment" className="btn btn-square bg-green-600 text-white">
                                         <FaMoneyCheckAlt></FaMoneyCheckAlt>
-                                    </button>
+                                    </Link>
                                 </th>
                             </tr>)
                         }

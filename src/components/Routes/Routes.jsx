@@ -15,6 +15,7 @@ import Instructor from "../Pages/Instructor/Instructor";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import MyClass from "../Pages/Dashboard/MyClass/MyClass";
 import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 
@@ -73,6 +74,10 @@ export const router = createBrowserRouter([
         {
           path: 'manageclass',
           element: <ManageClass></ManageClass>
+        },
+        {
+          path: 'payment',
+          element: <Payment></Payment>
         }
       ]
     }
