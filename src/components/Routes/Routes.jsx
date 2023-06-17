@@ -80,7 +80,7 @@ export const router = createBrowserRouter([
         {
           path: 'payment/:id',
           element: <Payment></Payment>,
-          loader: ({params}) => fetch(`http://localhost:3500/carts/${params.id}`)
+          loader: ({params}) => fetch(`https://music-pulse-server-sanzidahmed.vercel.app/carts/${params.id}`)
         }
       ]
     }

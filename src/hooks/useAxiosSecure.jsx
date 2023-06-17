@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../components/Provider/AuthProvider';
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:3500', 
+  baseURL: 'https://music-pulse-server-sanzidahmed.vercel.app', 
 });
 
 const useAxiosSecure = () => {

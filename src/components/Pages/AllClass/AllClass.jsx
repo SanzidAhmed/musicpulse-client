@@ -4,7 +4,7 @@ import SingleClass from "./SingleClass";
 
 const AllClass = () => {
     const [allClasses, setAllClasses] = useState([])
-    fetch('http://localhost:3500/classes')
+    fetch('https://music-pulse-server-sanzidahmed.vercel.app/classes')
         .then(res => res.json())
         .then(data => setAllClasses(data))
     return (

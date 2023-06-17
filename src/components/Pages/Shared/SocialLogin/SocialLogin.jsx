@@ -14,7 +14,7 @@ const SocialLogin = () => {
             .then((result) => {
                 const loggedUser = result.user;
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email }
-                fetch('http://localhost:3500/users', {
+                fetch('https://music-pulse-server-sanzidahmed.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         "content-type": "application/json"

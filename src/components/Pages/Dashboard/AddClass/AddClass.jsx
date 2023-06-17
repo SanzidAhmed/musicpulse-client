@@ -11,7 +11,7 @@ const AddClass = () => {
         data.coursePrice = parseFloat(data.coursePrice)
         data.seats = parseInt(data.seats)
         data.student = parseInt(data.student)
-        fetch('http://localhost:3500/classes', {
+        fetch('https://music-pulse-server-sanzidahmed.vercel.app/classes', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

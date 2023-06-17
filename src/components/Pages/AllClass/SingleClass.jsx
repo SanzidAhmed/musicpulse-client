@@ -13,7 +13,7 @@ const SingleClass = ({ classes }) => {
 
         if (user && user?.email) {
             const cartClass = { classId: _id, name: courseName, instructor: displayName, price: coursePrice, seats: seats, email: user?.email }
-            fetch('http://localhost:3500/carts', {
+            fetch('https://music-pulse-server-sanzidahmed.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     "content-type": "application/json"

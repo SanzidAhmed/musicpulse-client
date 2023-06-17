@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const PopularInstructor = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3500/users')
+        fetch('https://music-pulse-server-sanzidahmed.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setUsers(data);
@@ -13,7 +13,7 @@ const PopularInstructor = () => {
     const popularInstructor = users.filter((person) => person.role === 'instructor');
     return (
         <div>
-            <h1 className="text-3xl uppercase text-center mt-20 ">MusicPulse popular class</h1>
+            <h1 className="text-3xl uppercase text-center mt-20 ">MusicPulse popular instructor</h1>
             <div className=" mx-auto w-1/2 mb-20 border-solid border mt-2 border-[#F45050]"></div>
             <div className="md:grid md:grid-cols-3 gap-10 ">
                 {

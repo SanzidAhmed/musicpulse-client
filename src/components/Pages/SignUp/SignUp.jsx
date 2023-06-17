@@ -15,7 +15,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email, photo: data.photo };
-                        fetch('http://localhost:3500/users', {
+                        fetch('https://music-pulse-server-sanzidahmed.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 "content-type": "application/json"

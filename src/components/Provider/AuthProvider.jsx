@@ -39,10 +39,10 @@ const AuthProvider = ({children}) => {
 
             //   get and set token
             if(currentUser){
-                axios.post('http://localhost:3500/jwt', {email: currentUser.email})
+                axios.post('https://music-pulse-server-sanzidahmed.vercel.app/jwt', {email: currentUser.email})
                 .then(data => {
                     localStorage.setItem('access_token', data.data.token);
-                    axios.get(`http://localhost:3500/users/${currentUser.email}`)
+                    axios.get(`https://music-pulse-server-sanzidahmed.vercel.app/users/${currentUser.email}`)
                     .then(data => {
                         setUser({...currentUser, ...data.data});
                     })

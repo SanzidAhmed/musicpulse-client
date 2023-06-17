@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const PopularClass = () => {
     const [popularClasses, setPopularClasses] = useState([])
-    fetch('http://localhost:3500/classes')
+    fetch('https://music-pulse-server-sanzidahmed.vercel.app/classes')
         .then(res => res.json())
         .then(data => setPopularClasses(data))
     return (

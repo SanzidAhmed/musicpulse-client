@@ -4,11 +4,11 @@ import Swal from "sweetalert2";
 
 const ManageClass = () => {
     const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-        const res = await fetch('http://localhost:3500/allclasses')
+        const res = await fetch('https://music-pulse-server-sanzidahmed.vercel.app/allclasses')
         return res.json()
     })
     const handleStatusApproval = (class1) => {
-        fetch(`http://localhost:3500/classes/approved/${class1._id}`, {
+        fetch(`https://music-pulse-server-sanzidahmed.vercel.app/classes/approved/${class1._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -26,7 +26,7 @@ const ManageClass = () => {
             })
     }
     const handleStatusDenied = (class1) => {
-        fetch(`http://localhost:3500/classes/denied/${class1._id}`, {
+        fetch(`https://music-pulse-server-sanzidahmed.vercel.app/classes/denied/${class1._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

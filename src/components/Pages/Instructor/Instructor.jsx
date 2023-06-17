@@ -4,7 +4,7 @@ import {useEffect, useState } from "react";
 const Instructor = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3500/users')
+        fetch('https://music-pulse-server-sanzidahmed.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setUsers(data);

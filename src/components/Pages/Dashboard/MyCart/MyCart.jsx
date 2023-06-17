@@ -20,7 +20,7 @@ const MyCart = () => {
             confirmButtonText: 'delete',
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3500/carts/${item._id}`, {
+                fetch(`https://music-pulse-server-sanzidahmed.vercel.app/carts/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
