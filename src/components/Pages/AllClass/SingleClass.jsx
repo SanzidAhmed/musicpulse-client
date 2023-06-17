@@ -57,7 +57,7 @@ const SingleClass = ({ classes }) => {
                 <p><span className="font-semibold">Available Seats:</span> {seats}</p>
                 <p><span className="font-semibold">Course Price:</span> ${coursePrice}</p>
                 <div className="card-actions justify-end">
-                    <div onClick={() => handleAddToCart(classes)} disabled={seats === '0' || user?.role === 'instructor' || user?.role === 'admin'} className="btn btn-outline btn-xs" >Add to cart</div>
+                    <div onClick={() => handleAddToCart(classes)} disabled={seats === 0 || user?.role === 'instructor' || user?.role === 'admin'} className="btn btn-outline btn-xs" >Add to cart</div>
                 </div>
             </div>
         </div>
