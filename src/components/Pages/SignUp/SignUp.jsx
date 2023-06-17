@@ -1,13 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const { register, handleSubmit, reset } = useForm();
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
     const onSubmit = data => {
         console.log(data.photo);
         createUser(data.email, data.password)
@@ -25,9 +28,14 @@ const SignUp = () => {
                             .then(res => res.json())
                             .then(data => {
                                 if (data.insertedId) {
-
+                                    
                                     reset();
-                                    Navigate('/')
+                                    navigate('/')
+                                    Swal.fire(
+                                        'Good job!',
+                                        'Your signup successful!',
+                                        'success'
+                                      )
                                 }
                             })
 
@@ -35,7 +43,7 @@ const SignUp = () => {
 
             })
             .catch(err => {
-                console.log(err.message);
+                setError(err.message);
             })
     }
     return (
@@ -81,6 +89,7 @@ const SignUp = () => {
                 <SocialLogin></SocialLogin>
             </div>
             <p className="text-center mt-4">Already have an account? please  <Link to="/signin" className="text-orange-500 font-bold">Sign In</Link></p>
+            <p className="text-center text-red-600">{error}</p>
         </div>
     );
 };
