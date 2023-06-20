@@ -24,6 +24,7 @@ const Dashboard = () => {
                             </NavLink>
                             </li>
                             <li><NavLink to="/dashboard/manageusers"><FaUsers></FaUsers>Manage Users</NavLink></li>
+                            <li><NavLink to="/dashboard/allpayment"><FaUsers></FaUsers>All Payment History</NavLink></li>
                         </> : isInstructor ? <>
                             <li><NavLink to="/dashboard/addclass" className=" "><FaShoppingCart></FaShoppingCart> Add class
                             </NavLink>

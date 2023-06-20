@@ -17,6 +17,7 @@ import MyClass from "../Pages/Dashboard/MyClass/MyClass";
 import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import AllPaymentHistory from "../Pages/Dashboard/AllPaymentHistory/AllPaymentHistory";
 
 
 
@@ -81,6 +82,11 @@ export const router = createBrowserRouter([
           path: 'payment/:id',
           element: <Payment></Payment>,
           loader: ({params}) => fetch(`https://music-pulse-server-sanzidahmed.vercel.app/carts/${params.id}`)
+        },
+        {
+          path: 'allpayment',
+          element: <AllPaymentHistory></AllPaymentHistory>,
+          loader: () => fetch('https://music-pulse-server-sanzidahmed.vercel.app/allpaymenthistory')
         }
       ]
     }
