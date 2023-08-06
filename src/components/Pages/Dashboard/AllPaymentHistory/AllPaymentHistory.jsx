@@ -34,7 +34,7 @@ const AllPaymentHistory = () => {
                                 <td>${row.price}</td>
                                 <td className="dropdown dropdown-left bg-slate-100">
                                     <label tabIndex={0} className="btn ">{row.status}</label>
-                                    <ul tabIndex={0} className="dropdown-content menu p-2 bg-base-100 rounded-box w-32">
+                                    <ul tabIndex={0} className="dropdown-content menu p-2 bg-base-100 text-center rounded-box w-32">
                                         <li>Accept</li>
                                         <li>Delete</li>
                                     </ul>

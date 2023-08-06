@@ -19,7 +19,7 @@ const Navbar = () => {
         <li><Link to="/allclasses">All Classes</Link></li>
     </>
     return (
-        <div className="bg-slate-300 text-white fixed z-30 w-full h-28 max-w-screen-xl">
+        <div className="bg-slate-300 text-black fixed z-20  w-full h-20">
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -31,7 +31,7 @@ const Navbar = () => {
                             {user &&<li><Link to="/dashboard">Dashboard</Link></li>}
                         </ul>
                     </div>
-                    <Link><img className="h-20 w-28 btn btn-ghost hover:bg-slate-300" src="https://i.ibb.co/BnRMS9g/Red-Elegant-Abstract-Podcast-Free-Logo-1-removebg-preview.png" alt="" /></Link>
+                    <Link><img className="h-16 w-28 btn btn-ghost hover:bg-slate-300" src="https://i.ibb.co/BnRMS9g/Red-Elegant-Abstract-Podcast-Free-Logo-1-removebg-preview.png" alt="" /></Link>
                 </div>
 
                 <div className="navbar-end mr-10">
