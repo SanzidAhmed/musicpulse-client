@@ -31,7 +31,7 @@ const Navbar = () => {
                             {user &&<li><Link to="/dashboard">Dashboard</Link></li>}
                         </ul>
                     </div>
-                    <Link><img className="h-16 w-28 btn btn-ghost hover:bg-slate-300" src="https://i.ibb.co/BnRMS9g/Red-Elegant-Abstract-Podcast-Free-Logo-1-removebg-preview.png" alt="" /></Link>
+                    <Link to="/"><img className="h-16 w-28 btn btn-ghost hover:bg-slate-300" src="https://i.ibb.co/BnRMS9g/Red-Elegant-Abstract-Podcast-Free-Logo-1-removebg-preview.png" alt="" /></Link>
                 </div>
 
                 <div className="navbar-end mr-10">
