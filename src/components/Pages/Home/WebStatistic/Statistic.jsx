@@ -10,7 +10,7 @@ const Statistic = () => {
             <h1 className="pt-6 uppercase text-3xl  text-center">MusicPulse is online music school</h1>
             <p className="text-xl text-center w-2/5 mt-6  mx-auto">We have talented and very experienced instructors who teach piano, violin, guitar, cello, and other instruments.</p>
             <ScrollTrigger onEnter={() => setCountUp(true)} onExit={() => setCountUp(false)}>
-                <div className="flex justify-center items-center py-10 gap-36">
+                <div className="md:flex text-center justify-center items-center py-10 gap-36">
                     <div>
                         <div className=" border-2 border-[#F45050] rounded-full p-4">
                             {countup && <h1 className="text-4xl px-10 py-5 rounded-full    bg-[#F45050] font-bold">

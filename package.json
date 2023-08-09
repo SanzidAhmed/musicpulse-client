@@ -10,13 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.54.0",
     "@tanstack/react-query": "^4.29.12",
     "axios": "^1.4.0",
+    "emailjs": "^4.0.2",
     "firebase": "^9.22.2",
     "keen-slider": "^6.8.5",
     "localforage": "^1.10.0",
+    "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-countup": "^6.4.2",

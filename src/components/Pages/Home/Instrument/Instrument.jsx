@@ -6,7 +6,7 @@ const Instrument = () => {
         <div className="container mx-auto my-10">
             <h1 className=" uppercase text-3xl  text-center">Musical Instruments</h1>
             <div className=" mx-auto w-1/2  border-solid border mt-2 border-[#F45050] mb-10"></div>
-            <div className="grid grid-cols-4 text-center gap-10 ">
+            <div className="grid grid-cols-2 md:grid-cols-4 text-center gap-10 ">
                 <div>
                     <p className="text-8xl text-[#F45050]"><GiGuitar className="text-center items-center justify-center mx-auto"></GiGuitar></p>
                     <h1 className=" text-2xl font-semibold">Guitar</h1>

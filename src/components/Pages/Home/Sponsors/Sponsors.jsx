@@ -1,10 +1,9 @@
 import Marquee from "react-fast-marquee";
 const Sponsors = () => {
     return (
-        <div className="bg-slate-300 py-10 mt-10">
+        <div className="bg-slate-300 py-10 mt-5">
             <div className=" container mx-auto ">
-                <h1 className="text-3xl uppercase text-center ">Our Sponsors</h1>
-                <div className=" mx-auto w-1/2  border-solid border mt-2 border-[#F45050] mb-10"></div>
+                <h1 className="text-3xl uppercase text-center mb-5">Our Sponsors</h1>
                 <Marquee className="" direction="right">
                     <div className="flex justify-center items-center gap-4 mr-10">
                         <img className="h-20 w-20" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/UMG_Philippines_logo.svg" alt="" />

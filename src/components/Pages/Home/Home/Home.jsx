@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import Contact from "../Contact/Contact";
 import Groups from "../Groups/Groups";
 import Instrument from "../Instrument/Instrument";
 import PopularClass from "../PopularClass/PopularClass";
@@ -17,9 +18,10 @@ const Home = () => {
                 <PopularInstructor></PopularInstructor>
                 <Statistic></Statistic>
                 <Groups></Groups>
-                <Sponsors></Sponsors>
                 <Testimonial></Testimonial>
+                <Sponsors></Sponsors>
                 <Instrument></Instrument>
+                <Contact></Contact>
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ const Groups = () => {
         <div className="container mx-auto my-10">
             <h1 className='text-3xl uppercase text-center'>Music Groups</h1>
             <div className=" mx-auto w-1/2  border-solid border mt-2 border-[#F45050] mb-10"></div>
-            <div className="grid grid-cols-4 mx-auto gap-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 mx-auto gap-10">
                 <div className="">
                     <img src="https://images.unsplash.com/photo-1595712874516-b2739ab4f924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" className="rounded-full h-48 w-48 mx-auto mb-8" alt="" />
                     <h1 className="text-2xl text-center">Kids</h1>
